@@ -1,0 +1,26 @@
+{
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"CreateLinks": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/Links.js",
+	"OnFailure": "/SalesOrdersOffline/Actions/CreateUpdateDelete/CreateEntityFailure.action",
+	"OnSuccess": "/SalesOrdersOffline/Rules/Common/ChangeSet/CreateEntitySuccess.js",
+	"Properties": {
+		"CurrencyCode": "#ClientData/#Property:Product/#Property:CurrencyCode",
+		"DeliveryDate": "#Control:DatePickerDeliveryDate/#Value",
+		"GrossAmount": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/GrossAmount.js",
+		"ItemNumber": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateItemNumber.js",
+		"NetAmount": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/NetAmount.js",
+		"ProductId": "#Control:ObjectCellListPickerProductId/#Value/#First/#Property:ReturnValue",
+		"Quantity": "#Control:SimplePropertyQuantity/#Value",
+		"QuantityUnit": "#Control:SimplePropertyQuantityUnit/#Value",
+		"SalesOrderId": "/SalesOrdersOffline/Rules/SalesOrder/GetSalesOrderId.js",
+		"TaxAmount": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/TaxAmount.js"
+	},
+	"Target": {
+		"EntitySet": "SalesOrderItems",
+		"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+	},
+	"ValidationRule": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/Validation.js",
+	"_Type": "Action.Type.ODataService.CreateEntity"
+}

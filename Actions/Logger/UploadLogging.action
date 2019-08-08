@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Logger.Upload",
+	"OnSuccess": "/SalesOrdersOffline/Actions/Logger/LogUploadSuccessMessage.action",
+	"OnFailure": "/SalesOrdersOffline/Actions/Logger/LogUploadFailureMessage.action",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": " "	
+}

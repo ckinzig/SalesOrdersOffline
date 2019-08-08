@@ -1,0 +1,53 @@
+{
+		"Caption": "$(L,'support')",
+		"Controls": [
+			{
+				"Sections": [
+					{
+						"ContactCells": [
+							{
+								"ContactCell": {
+									"Headline": "$(L,'contactUs')",
+									"ActivityItems": [
+										{
+											"ActivityType": "Phone",
+											"ActivityValue": "49692185788"
+										},
+										{
+											"ActivityType": "VideoCall",
+											"ActivityValue": "49692185788"
+										},
+										{
+											"ActivityType": "Email",
+											"ActivityValue": "christoph.kinzig@evonik.com"
+										}
+									]
+								}
+							}
+						],
+						"_Type": "Section.Type.ContactCell"
+					},
+					{
+						"SimplePropertyCells": [
+							{
+								"SimplePropertyCell": {
+									"AccessoryType": "disclosureIndicator",
+									"KeyName": "$(L,activityLog)",
+									"OnPress": "/SalesOrdersOffline/Actions/User/UserActivityLog.action"
+								}
+							}
+						],
+						"Layout": {
+							"NumberOfColumns": 1,
+							"MinimumInteritemSpacing": 66
+						},
+						"_Type": "Section.Type.SimplePropertyCollection"
+					}
+				],
+				"_Type": "Control.Type.SectionedTable",
+				"_Name": "SectionedTable"
+			}
+		],
+		"_Type": "Page",
+		"_Name": "UserSupport"
+}

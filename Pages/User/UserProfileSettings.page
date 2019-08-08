@@ -1,0 +1,101 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SalesOrdersOffline/Actions/CancelPage.action",
+				"Position": "left",
+				"Text": "$(L,'close')"
+			}
+		]
+	},
+	"Caption": "$(L,'profile')",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Layout": {
+						"MinimumInteritemSpacing": 66,
+						"NumberOfColumns": 1
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,'passcode')",
+								"OnPress": "/SalesOrdersOffline/Rules/UserPreferences/ChangeUserPasscode.js"
+							}
+						}
+					],
+					"_Name": "SectionSimplePropertyCollection0",
+					"_Type": "Section.Type.SimplePropertyCollection"
+				},
+				{
+					"Layout": {
+						"MinimumInteritemSpacing": 66,
+						"NumberOfColumns": 1
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,'support')",
+								"OnPress": "/SalesOrdersOffline/Actions/User/UserSupport.action"
+							}
+						}
+					],
+					"_Name": "SectionSimplePropertyCollection1",
+					"_Type": "Section.Type.SimplePropertyCollection"
+				},
+				{
+					"Layout": {
+						"MinimumInteritemSpacing": 66,
+						"NumberOfColumns": 1
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,'syncErrors')",
+								"OnPress": "/SalesOrdersOffline/Actions/ErrorArchive/NavToErrorArchive.action"
+							}
+						}
+					],
+					"_Name": "SectionSimplePropertyCollection2",
+					"_Type": "Section.Type.SimplePropertyCollection"
+				},
+				{
+					"Buttons": [
+						{
+							"OnPress": "/SalesOrdersOffline/Rules/Sync/OnSync.js",
+							"TextAlignment": "center",
+							"Title": "$(L,'sync')"
+						}
+					],
+					"_Type": "Section.Type.ButtonTable"
+				},
+				{
+					"Buttons": [
+						{
+							"OnPress": "/SalesOrdersOffline/Rules/Common/ResetAlertAction.js",
+							"Style": "ResetRed",
+							"TextAlignment": "center",
+							"Title": "$(L,'reset')"
+						}
+					],
+					"Footer": {
+						"AttributeLabel": "",
+						"Caption": "$(L,'deleteApplicationDataWarning')",
+						"FooterStyle": "help",
+						"UseBottomPadding": true
+					},
+					"_Name": "SectionButtonTable0",
+					"_Type": "Section.Type.ButtonTable"
+				}
+			],
+			"_Name": "SectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Name": "UserProfileSettings",
+	"_Type": "Page"
+}

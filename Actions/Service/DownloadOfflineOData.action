@@ -1,0 +1,31 @@
+{
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"DefiningRequests": [
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "Customers",
+			"Query": "Customers"
+		},
+		{
+			"AutomaticallyRetrievesStreams": true,
+			"Name": "Products",
+			"Query": "Products"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "SalesOrderHeaders",
+			"Query": "SalesOrderHeaders"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "SalesOrderItems",
+			"Query": "SalesOrderItems"
+		}
+	],
+	"OnFailure": "/SalesOrdersOffline/Rules/Sync/CheckForSyncErrorsAfterDownloadFailure.js",
+	"OnSuccess": "/SalesOrdersOffline/Rules/Sync/CheckForSyncErrorsAfterDownloadSuccess.js",
+	"Service": "/SalesOrdersOffline/Services/SampleSrv.service",
+	"_Type": "Action.Type.OfflineOData.Download"
+}

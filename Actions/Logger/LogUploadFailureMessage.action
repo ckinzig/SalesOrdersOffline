@@ -1,0 +1,6 @@
+{
+	"Message": "$(L,uploadingLogFailed)",
+	"Duration": 7,
+	"Animated": true,
+	"_Type": "Action.Type.BannerMessage"
+}

@@ -1,0 +1,76 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SalesOrdersOffline/Actions/CancelPage.action",
+				"Position": "left",
+				"SystemItem": "Cancel",
+				"Text": ""
+			},
+			{
+				"OnPress": "/SalesOrdersOffline/Actions/SalesOrder/CreateUpdateDelete/SOHeaderCreateCheckRequiredFields.action",
+				"Position": "right",
+				"Text": "/SalesOrdersOffline/Rules/Common/ChangeSet/ChangeSetCreateUpdateButtonText.js"
+			}
+		]
+	},
+	"Caption": "$(L,'salesOrderHeaderCreate')",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowEmptySelection": true,
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,'customerIdLabel')",
+							"IsEditable": true,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": {
+								"ObjectCell": {
+									"Footnote": "{City}",
+									"PreserveIconStackSpacing": false,
+									"StatusText": "{Country}",
+									"Title": "$(L,'fullName',{{#Property:LastName}},{{#Property:FirstName}})"
+								},
+								"ReturnValue": "{CustomerId}",
+								"Target": {
+									"EntitySet": "Customers",
+									"QueryOptions": "$orderby=LastName",
+									"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+								}
+							},
+							"PickerPrompt": "$(L,'selectSingleLine')",
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 1,
+								"Placeholder": "$(L,'search')"
+							},
+							"_Name": "ObjectCellListPickerCustomerId",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					]
+				},
+				{
+					"Controls": [
+						{
+							"Caption": "$(L,'currencyCodeLabel')",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Value": "EUR",
+							"_Name": "SimplePropertyCurrencyCode",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					]
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"_Name": "SOHeaderCreate",
+	"_Type": "Page"
+}

@@ -1,0 +1,103 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SalesOrdersOffline/Actions/CancelPage.action",
+				"Position": "left",
+				"SystemItem": "Cancel",
+				"Text": ""
+			},
+			{
+				"OnPress": "/SalesOrdersOffline/Actions/SalesOrder/CreateUpdateDelete/SOItemCreateUpdateCheckRequiredFields.action",
+				"Position": "right",
+				"SystemItem": "Save",
+				"Text": ""
+			}
+		]
+	},
+	"Caption": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/Caption.js",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowEmptySelection": true,
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,'productIdLabel')",
+							"IsEditable": "/SalesOrdersOffline/Rules/Common/IsOnCreate.js",
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"OnValueChange": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/ProductListPickerOnValueChange.js",
+							"PickerItems": {
+								"ObjectCell": {
+									"PreserveIconStackSpacing": false,
+									"StatusText": "{QuantityUnit}",
+									"Subhead": "{Category}",
+									"SubstatusText": "$(C,{Price},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})",
+									"Title": "{Name}"
+								},
+								"ReturnValue": "{ProductId}",
+								"Target": {
+									"EntitySet": "Products",
+									"QueryOptions": "$orderby=Name",
+									"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+								}
+							},
+							"PickerPrompt": "$(L,'selectSingleLine')",
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,'search')"
+							},
+							"Value": "#Property:ProductDetails/#Property:ProductId",
+							"_Name": "ObjectCellListPickerProductId",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					]
+				},
+				{
+					"Controls": [
+						{
+							"Caption": "$(L,'quantityLabel')",
+							"IsEditable": true,
+							"IsVisible": true,
+							"KeyboardType": "Number",
+							"Value": "{Quantity}",
+							"_Name": "SimplePropertyQuantity",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "$(L,'quantityUnitLabel')",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Value": "{QuantityUnit}",
+							"_Name": "SimplePropertyQuantityUnit",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					]
+				},
+				{
+					"Controls": [
+						{
+							"Caption": "$(L,'deliveryDateLabel')",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Mode": "date",
+							"Value": "{DeliveryDate}",
+							"_Name": "DatePickerDeliveryDate",
+							"_Type": "Control.Type.FormCell.DatePicker"
+						}
+					]
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"OnLoaded": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/OnLoaded.js",
+	"_Name": "SOItemCreateUpdate",
+	"_Type": "Page"
+}

@@ -1,0 +1,81 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SalesOrdersOffline/Rules/SalesOrder/SOOnDeleteAction.js",
+				"Position": "right",
+				"SystemItem": "Trash",
+				"Text": ""
+			},
+			{
+				"OnPress": "/SalesOrdersOffline/Rules/SalesOrder/SOItemNavToUpdate.js",
+				"Position": "right",
+				"SystemItem": "Edit",
+				"Text": ""
+			}
+		]
+	},
+	"Caption": "$(L,'itemItemNumber',{ItemNumber})",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "$(L,'productNameLabel')",
+							"Value": "/SalesOrdersOffline/Rules/SalesOrder/SOItemDetails/ProductName.js"
+						},
+						{
+							"KeyName": "$(L,'itemNumberLabel')",
+							"Value": "{ItemNumber}"
+						},
+						{
+							"KeyName": "$(L,'categoryLabel')",
+							"Value": "/SalesOrdersOffline/Rules/SalesOrder/SOItemDetails/CategoryName.js"
+						},
+						{
+							"KeyName": "$(L,'deliveryDateLabel')",
+							"Value": "$(D,{DeliveryDate})"
+						},
+						{
+							"KeyName": "$(L,'netAmountLabel')",
+							"Value": "$(C,{NetAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})"
+						},
+						{
+							"KeyName": "$(L,'quantityLabel')",
+							"Value": "$(L,'quantityQuantityUnit',{Quantity},{QuantityUnit})"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Layout": {
+						"NumberOfColumns": 1
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,'productPictureLabel')",
+								"OnPress": "/SalesOrdersOffline/Actions/Product/OpenProductPicture.action",
+								"Value": " "
+							}
+						}
+					],
+					"_Name": "SectionSimplePropertyCollection0",
+					"_Type": "Section.Type.SimplePropertyCollection"
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"OnLoaded": "/SalesOrdersOffline/Rules/SalesOrder/SOItemDetails/OnLoaded.js",
+	"_Name": "SOItemDetails",
+	"_Type": "Page"
+}

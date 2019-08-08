@@ -1,0 +1,8 @@
+{
+	"Target": {
+		"EntitySet": "Products",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+	},
+	"_Type": "Action.Type.ODataService.DownloadMedia"
+}

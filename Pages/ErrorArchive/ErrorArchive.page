@@ -1,0 +1,37 @@
+{
+		"Caption": "$(L,syncErrors)",
+		"Controls": [
+			{
+				"Sections": [
+					{
+						"Search": {
+							"Enabled": true,
+							"Delay": 500,
+							"MinimumCharacterThreshold": 3,
+							"Placeholder": "$(L,search)"
+						},
+						"Header": {
+							"UseTopPadding": false
+						},
+						"ObjectCell": {
+							"AccessoryType": "disclosureIndicator",
+							"Title": "/SalesOrdersOffline/Rules/ErrorArchive/ErrorArchiveMessage.js",
+							"Subhead": "{HTTPStatusCode}",
+							"Description": "{RequestURL}",
+							"OnPress": "/SalesOrdersOffline/Rules/ErrorArchive/ErrorArchiveDetailsNav.js",
+							"PreserveIconStackSpacing": false
+						},
+						"Target": {
+							"EntitySet": "ErrorArchive",
+							"Service": "/SalesOrdersOffline/Services/SampleSrv.service",
+							"QueryOptions": ""
+						},
+						"_Type": "Section.Type.ObjectTable"
+					}
+				],
+				"_Type": "Control.Type.SectionedTable"
+			}
+		],
+		"_Type": "Page",
+		"_Name": "ErrorArchivePage"
+}

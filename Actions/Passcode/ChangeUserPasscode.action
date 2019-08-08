@@ -1,0 +1,5 @@
+{
+		"OnFailure": "/SalesOrdersOffline/Actions/Passcode/ChangePasscodeFailure.action",
+		"OnSuccess": "/SalesOrdersOffline/Actions/Passcode/ChangePasscodeSuccess.action",
+		"_Type": "Action.Type.ChangeUserPasscode"
+}

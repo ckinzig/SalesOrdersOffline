@@ -1,0 +1,134 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SalesOrdersOffline/Rules/SalesOrder/SOItemNavToCreate.js",
+				"Position": "right",
+				"SystemItem": "Add",
+				"Text": ""
+			},
+			{
+				"OnPress": "/SalesOrdersOffline/Rules/SalesOrder/SOOnDeleteAction.js",
+				"Position": "right",
+				"SystemItem": "Trash",
+				"Text": ""
+			}
+		]
+	},
+	"Caption": "$(L,'salesOrder')",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Footnote": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/Format.js",
+						"HeadlineText": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/Format.js",
+						"StatusText": "{LifeCycleStatusName}",
+						"Subhead": "$(DT,{CreatedAt})",
+						"SubstatusText": "$(C,{NetAmount},'EUR','',{maximumFractionDigits:2,useGrouping:true})"
+					},
+					"_Name": "SalesOrderHeader",
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"ContactCells": [
+						{
+							"ContactCell": {
+								"ActivityItems": [
+									{
+										"ActivityType": "Phone",
+										"ActivityValue": "{{#Property:CustomerDetails/#Property:PhoneNumber}}"
+									},
+									{
+										"ActivityType": "VideoCall",
+										"ActivityValue": "{{#Property:CustomerDetails/#Property:PhoneNumber}}"
+									},
+									{
+										"ActivityType": "Email",
+										"ActivityValue": "{{#Property:CustomerDetails/#Property:EmailAddress}}"
+									}
+								],
+								"Description": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/Format.js",
+								"Headline": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/Format.js"
+							}
+						}
+					],
+					"Header": {
+						"Caption": "$(L,customer)",
+						"UseTopPadding": true
+					},
+					"_Name": "Customer",
+					"_Type": "Section.Type.ContactCell"
+				},
+				{
+					"EmptySection": {
+						"Caption": "$(L,noItemsAvailable)"
+					},
+					"Footer": {
+						"AccessoryType": "disclosureIndicator",
+						"AttributeLabel": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCount.js",
+						"Caption": "$(L,seeAll)",
+						"FooterStyle": "attribute",
+						"OnPress": "/SalesOrdersOffline/Actions/SalesOrder/NavToSOItemList.action",
+						"UseBottomPadding": true
+					},
+					"Header": {
+						"Caption": "$(L,Items)",
+						"UseTopPadding": true
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"DetailImage": "/SalesOrdersOffline/Rules/Product/GetPicturePath.js",
+						"DetailImageIsCircular": false,
+						"OnPress": "/SalesOrdersOffline/Actions/SalesOrder/NavToSOItemDetails.action",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "$(L,'quantityQuantityUnit',{Quantity},{QuantityUnit})",
+						"Subhead": "#Property:ProductDetails/#Property:CategoryName",
+						"SubstatusText": "$(C,{NetAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})",
+						"Title": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/Format.js"
+					},
+					"Target": {
+						"EntitySet": "SalesOrderItems",
+						"QueryOptions": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/ItemsQuery.js",
+						"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+					},
+					"_Name": "SalesOrderItems",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "SectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"OnLoaded": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/OnLoaded.js",
+	"OnReturning": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/OnReturning.js",
+	"ToolBar": {
+		"Controls": [
+			{
+				"Clickable": true,
+				"Enabled": true,
+				"SystemItem": "FlexibleSpace",
+				"_Name": "FlexibleSpaceLeftTbI",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Caption": "$(L,'accept')",
+				"Clickable": true,
+				"Enabled": "/SalesOrdersOffline/Rules/SalesOrder/SOIsAcceptable.js",
+				"OnPress": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/OnAccept.js",
+				"_Name": "SalesOrderAcceptTbI",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Caption": "$(L,'reject')",
+				"Clickable": true,
+				"Enabled": "/SalesOrdersOffline/Rules/SalesOrder/SOIsRejectable.js",
+				"OnPress": "/SalesOrdersOffline/Rules/SalesOrder/SODetails/OnReject.js",
+				"_Name": "SalesOrderRejectTbI",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "SODetails",
+	"_Type": "Page"
+}

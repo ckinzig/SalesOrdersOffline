@@ -1,0 +1,121 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SalesOrdersOffline/Actions/CancelPage.action",
+				"Position": "left",
+				"SystemItem": "Cancel",
+				"Text": ""
+			},
+			{
+				"OnPress": "/SalesOrdersOffline/Actions/ClosePage.action",
+				"Position": "right",
+				"SystemItem": "Done",
+				"Text": ""
+			}
+		]
+	},
+	"Caption": "Filter",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": true,
+							"Caption": "$(L,'sortBy')",
+							"IsEditable": true,
+							"IsVisible": true,
+							"SortByItems": [
+								{
+									"DisplayValue": "$(L,'lastNameLabel')",
+									"ReturnValue": "CustomerDetails/LastName"
+								},
+								{
+									"DisplayValue": "$(L,'createdAtLabel')",
+									"ReturnValue": "CreatedAt"
+								},
+								{
+									"DisplayValue": "$(L,'netAmountLabel')",
+									"ReturnValue": "NetAmount"
+								},
+								{
+									"DisplayValue": "$(L,'cityLabel')",
+									"ReturnValue": "CustomerDetails/City"
+								},
+								{
+									"DisplayValue": "$(L,'countryLabel')",
+									"ReturnValue": "CustomerDetails/Country"
+								}
+							],
+							"_Name": "SortFilter",
+							"_Type": "Control.Type.FormCell.Sorter"
+						}
+					]
+				},
+				{
+					"Controls": [
+						{
+							"AllowEmptySelection": true,
+							"AllowMultipleSelection": true,
+							"Caption": "$(L,'statusLabel')",
+							"FilterProperty": {
+								"name": "LifeCycleStatus",
+								"values": [
+									{
+										"DisplayValue": "New",
+										"ReturnValue": "N"
+									},
+									{
+										"DisplayValue": "Accepted",
+										"ReturnValue": "A"
+									},
+									{
+										"DisplayValue": "Rejected",
+										"ReturnValue": "R"
+									}
+								]
+							},
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "LifeCycleStatusFilter",
+							"_Type": "Control.Type.FormCell.Filter"
+						},
+						{
+							"AllowEmptySelection": true,
+							"AllowMultipleSelection": true,
+							"Caption": "$(L,'countryLabel')",
+							"FilterProperty": "/SalesOrdersOffline/Rules/SalesOrder/SOHeaderFilter/CountryFilter.js",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "CountryFilter",
+							"_Type": "Control.Type.FormCell.Filter"
+						}
+					]
+				},
+				{
+					"Controls": [
+						{
+							"IsVisible": true,
+							"OnPress": "/SalesOrdersOffline/Rules/Filter/FilterReset.js",
+							"TextAlignment": "center",
+							"Title": "$(L,'resetAll')",
+							"_Name": "ResetButton",
+							"_Type": "Control.Type.FormCell.Button"
+						}
+					]
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"Result": [
+		"#Page:SOHeaderFilter/#Control:SortFilter/#Value",
+		"#Page:SOHeaderFilter/#Control:LifeCycleStatusFilter/#Value",
+		"#Page:SOHeaderFilter/#Control:CountryFilter/#Value"
+	],
+	"_Name": "SOHeaderFilter",
+	"_Type": "Page"
+}

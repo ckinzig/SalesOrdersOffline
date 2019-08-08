@@ -1,0 +1,4 @@
+{
+	"PageToOpen": "/SalesOrdersOffline/Pages/SalesOrder/SOItemDetails.page",
+	"_Type": "Action.Type.Navigation"
+}

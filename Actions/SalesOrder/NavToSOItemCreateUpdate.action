@@ -1,0 +1,5 @@
+{
+	"ModalPage": true,
+	"PageToOpen": "/SalesOrdersOffline/Pages/SalesOrder/SOItemCreateUpdate.page",
+	"_Type": "Action.Type.Navigation"
+}

@@ -1,0 +1,22 @@
+{
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"OnFailure": "/SalesOrdersOffline/Actions/CreateUpdateDelete/CreateEntityFailure.action",
+	"OnSuccess": "/SalesOrdersOffline/Rules/Common/ChangeSet/CreateEntitySuccess.js",
+	"Properties": {
+		"CreatedAt": "/SalesOrdersOffline/Rules/Common/GetCurrentDate.js",
+		"CurrencyCode": "#Control:SimplePropertyCurrencyCode/#Value",
+		"CustomerId": "#Control:ObjectCellListPickerCustomerId/#Value/#First/#Property:ReturnValue",
+		"GrossAmount": "0.0",
+		"LifeCycleStatus": "N",
+		"LifeCycleStatusName": "New",
+		"NetAmount": "0.0",
+		"TaxAmount": "0.0"
+	},
+	"Target": {
+		"EntitySet": "SalesOrderHeaders",
+		"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+	},
+	"_Type": "Action.Type.ODataService.CreateEntity"
+}

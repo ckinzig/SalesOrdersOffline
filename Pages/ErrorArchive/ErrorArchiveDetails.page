@@ -1,0 +1,55 @@
+{
+		"Caption": "$(L,errorDetails)",
+		"ActionBar": {
+			"Items": [
+				{
+					"Position": "right",
+					"Text": "$(L,fix)",
+					"OnPress": "/SalesOrdersOffline/Rules/ErrorArchive/ErrorArchiveAffectedEntityNav.js"
+				}
+			]
+		},
+		"Controls": [
+			{
+				"Sections": [
+					{
+						"Header": {
+							"Caption": "$(L,details)"
+						},
+						"KeyAndValues": [
+							{
+								"KeyName": "$(L,error)",
+								"Value": "/SalesOrdersOffline/Rules/ErrorArchive/ErrorArchiveDetailsMessage.js"
+							},
+							{
+								"KeyName": "$(L,requestBody)",
+								"Value": "/SalesOrdersOffline/Rules/ErrorArchive/ErrorArchiveDetailsRequestBody.js"
+							},
+							{
+								"KeyName": "$(L,requestUrl)",
+								"Value": "#Property:ErrorObject/#Property:RequestURL"
+							},
+							{
+								"KeyName": "$(L,httpStatusCode)",
+								"Value": "#Property:ErrorObject/#Property:HTTPStatusCode"
+							},
+							{
+								"KeyName": "$(L,requestMethod)",
+								"Value": "#Property:ErrorObject/#Property:RequestMethod"
+							}
+						],
+						"Layout": {
+							"NumberOfColumns": 1,
+							"MinimumInteritemSpacing": 66
+						},
+						"_Type": "Section.Type.KeyValue",
+						"_Name": "Notes"
+					}
+				],
+				"_Type": "Control.Type.SectionedTable",
+				"_Name": "SectionedTable"
+			}
+		],
+		"_Type": "Page",
+		"_Name": "ErrorArchiveDetailsPage"
+}

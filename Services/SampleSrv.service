@@ -1,0 +1,6 @@
+{
+	"AppId": "com.sap.mdk.poc",
+	"DestinationName": "com.sap.edm.sampleservice.v2",
+	"OfflineEnabled": true,
+	"ServiceUrl": "/destinations/mobileservices"
+}

@@ -1,0 +1,11 @@
+{
+	"OnFailure": "/SalesOrdersOffline/Rules/Common/UpdateRequiredFailed.js",
+	"OnSuccess": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/CreateUpdate.js",
+	"RequiredFields": [
+		"ObjectCellListPickerProductId",
+		"SimplePropertyQuantity",
+		"SimplePropertyQuantityUnit",
+		"DatePickerDeliveryDate"
+	],
+	"_Type": "Action.Type.CheckRequiredFields"
+}

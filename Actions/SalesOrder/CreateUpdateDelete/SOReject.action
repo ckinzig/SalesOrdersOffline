@@ -1,0 +1,17 @@
+{
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"OnFailure": "/SalesOrdersOffline/Actions/SalesOrder/CreateUpdateDelete/SOLifeCycleStatusChangeFailure.action",
+	"OnSuccess": "/SalesOrdersOffline/Actions/SalesOrder/CreateUpdateDelete/SOLifeCycleStatusChangeSuccess.action",
+	"Properties": {
+		"LifeCycleStatus": "R",
+		"LifeCycleStatusName": "Rejected"
+	},
+	"Target": {
+		"EntitySet": "SalesOrderHeaders",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

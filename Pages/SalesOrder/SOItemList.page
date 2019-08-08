@@ -1,0 +1,51 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SalesOrdersOffline/Rules/SalesOrder/SOItemNavToCreate.js",
+				"Position": "right",
+				"SystemItem": "Add",
+				"Text": ""
+			}
+		]
+	},
+	"Caption": "$(L,'items')",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"EmptySection": {
+						"Caption": "$(L,noItemsAvailable)"
+					},
+					"Header": {
+						"UseTopPadding": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"DetailImage": "/SalesOrdersOffline/Rules/Product/GetPicturePath.js",
+						"DetailImageIsCircular": false,
+						"OnPress": "/SalesOrdersOffline/Actions/SalesOrder/NavToSOItemDetails.action",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "$(L,'quantityQuantityUnit',{{#Property:Quantity}},{{#Property:QuantityUnit}})",
+						"Subhead": "{{#Property:ProductDetails/#Property:CategoryName}}",
+						"SubstatusText": "$(C,{NetAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})",
+						"Title": "/SalesOrdersOffline/Rules/SalesOrder/SOItemList/Format.js"
+					},
+					"Target": {
+						"EntitySet": "SalesOrderItems",
+						"QueryOptions": "/SalesOrdersOffline/Rules/SalesOrder/SOItemList/QueryOptions.js",
+						"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+					},
+					"_Name": "ItemList",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "SectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"OnLoaded": "/SalesOrdersOffline/Rules/SalesOrder/SOItemList/OnLoaded.js",
+	"OnReturning": "/SalesOrdersOffline/Rules/SalesOrder/SOItemList/OnReturning.js",
+	"_Name": "SOItemList",
+	"_Type": "Page"
+}

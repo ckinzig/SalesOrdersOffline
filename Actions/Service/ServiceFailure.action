@@ -1,0 +1,6 @@
+{
+	"Animated": true,
+	"Duration": 7,
+	"Message": "/SalesOrdersOffline/Rules/Common/ODataFailure.js",
+	"_Type": "Action.Type.BannerMessage"
+}

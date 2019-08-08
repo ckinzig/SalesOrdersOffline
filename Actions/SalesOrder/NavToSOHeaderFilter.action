@@ -1,0 +1,10 @@
+{
+	"ActionResult": {
+		"_Name": "filterResult"
+	},
+	"Filterable": "#Page:SOHeaderList/#Control:SectionedTable",
+	"ModalPageFullscreen": false,
+	"OnSuccess": "/SalesOrdersOffline/Rules/SalesOrder/SOHeaderFilter/OnFilterSuccess.js",
+	"PageToOpen": "/SalesOrdersOffline/Pages/SalesOrder/SOHeaderFilter.page",
+	"_Type": "Action.Type.Filter"
+}

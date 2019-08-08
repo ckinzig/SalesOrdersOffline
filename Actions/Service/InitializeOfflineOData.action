@@ -1,0 +1,33 @@
+{
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"ActivityIndicatorText": "$(L,'initializeServiceActivityIndicatorText')",
+	"DefiningRequests": [
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "Customers",
+			"Query": "Customers"
+		},
+		{
+			"AutomaticallyRetrievesStreams": true,
+			"Name": "Products",
+			"Query": "Products"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "SalesOrderHeaders",
+			"Query": "SalesOrderHeaders"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "SalesOrderItems",
+			"Query": "SalesOrderItems"
+		}
+	],
+	"OnFailure": "/SalesOrdersOffline/Actions/Service/ServiceFailure.action",
+	"OnSuccess": "/SalesOrdersOffline/Rules/SalesOrder/SOHeaderList/OnLoaded.js",
+	"Service": "/SalesOrdersOffline/Services/SampleSrv.service",
+	"ShowActivityIndicator": true,
+	"_Type": "Action.Type.OfflineOData.Initialize"
+}

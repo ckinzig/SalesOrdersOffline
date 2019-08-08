@@ -1,0 +1,7 @@
+{
+		"_Type": "Action.Type.ToastMessage",
+		"Message": "$(L,passcodeChangeNotAllowed)",
+		"Duration": 4,
+		"Animated": true,
+		"MaxNumberOfLines": 2
+}

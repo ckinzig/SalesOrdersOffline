@@ -1,0 +1,10 @@
+{
+	"OnFailure": "/SalesOrdersOffline/Rules/Common/UpdateRequiredFailed.js",
+	"OnSuccess": "/SalesOrdersOffline/Actions/Logger/UploadLogging.action",
+	"RequiredFields": [
+		"LogLevelLstPkr"
+	],
+	"_Type": "Action.Type.CheckRequiredFields",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": " "
+}

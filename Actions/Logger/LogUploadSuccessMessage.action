@@ -1,0 +1,8 @@
+{
+	"Animated": true,
+	"Duration": 7,
+	"Message": "$(L,logUploadSuccessful)",
+	"IsIconHidden": true,
+	"MaxNumberOfLines": 1,
+	"_Type": "Action.Type.ToastMessage"	
+}

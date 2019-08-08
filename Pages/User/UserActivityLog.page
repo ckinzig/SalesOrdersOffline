@@ -1,0 +1,46 @@
+{
+		"Caption": "$(L,support)",
+		"OnLoaded": "/SalesOrdersOffline/Rules/Log/UserLogSetting.js",
+		"Controls": [
+			{
+				"Sections": [
+					{
+						"Controls": [
+							{
+								"Caption": "$(L,enableLogging)",
+								"Value": false,
+								"OnValueChange": "/SalesOrdersOffline/Rules/Log/ToggleUserLogging.js",
+								"_Name": "EnableLogSwitch",
+								"_Type": "Control.Type.FormCell.Switch"
+							},
+							{
+								"AllowMultipleSelection": false,
+								"IsSearchEnabled": false,
+								"Caption": "$(L,logLevel)",
+								"Value": "",
+								"OnValueChange": "/SalesOrdersOffline/Rules/Log/SetUserLogLevel.js",
+								"IsEditable": false,
+								"PickerItems": "/SalesOrdersOffline/Rules/UserSupport/LogLevels.js",
+								"_Name": "LogLevelLstPkr",
+								"_Type": "Control.Type.FormCell.ListPicker"
+							}
+						]
+					},
+					{
+						"Controls": [
+							{
+								"Title": "$(L,sendActivityLog)",
+								"OnPress": "/SalesOrdersOffline/Rules/Log/SendLoggerUpdate.js",
+								"_Type": "Control.Type.FormCell.Button",
+								"_Name": "Send"
+							}
+						]
+					}
+				],
+				"_Name": "FormCellContainer",
+				"_Type": "Control.Type.FormCellContainer"
+			}
+		],
+		"_Type": "Page",
+		"_Name": "UserActivityLog"
+}

@@ -1,0 +1,5 @@
+{
+	"ModalPage": true,
+	"PageToOpen": "/SalesOrdersOffline/Pages/User/UserProfileSettings.page",
+	"_Type": "Action.Type.Navigation"
+}

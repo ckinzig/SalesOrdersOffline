@@ -1,0 +1,21 @@
+{
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"OnFailure": "/SalesOrdersOffline/Actions/CreateUpdateDelete/UpdateEntityFailure.action",
+	"OnSuccess": "/SalesOrdersOffline/Actions/CreateUpdateDelete/UpdateEntitySuccess.action",
+	"Properties": {
+		"DeliveryDate": "#Control:DatePickerDeliveryDate/#Value",
+		"GrossAmount": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/GrossAmount.js",
+		"NetAmount": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/NetAmount.js",
+		"Quantity": "#Control:SimplePropertyQuantity/#Value",
+		"TaxAmount": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/TaxAmount.js"		
+	},
+	"Target": {
+		"EntitySet": "SalesOrderItems",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+	},
+	"ValidationRule": "/SalesOrdersOffline/Rules/SalesOrder/SOItemCreateUpdate/Validation.js",
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

@@ -1,0 +1,6 @@
+{
+		"Message": "$(L,changingPasscodeFailed)",
+		"Duration": 2,
+		"Animated": true,
+		"_Type": "Action.Type.BannerMessage"
+}

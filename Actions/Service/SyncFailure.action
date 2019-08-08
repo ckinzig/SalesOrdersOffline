@@ -1,0 +1,6 @@
+{
+	"Animated": true,
+	"Duration": 7,
+	"Message": "$(L,'syncError')",
+	"_Type": "Action.Type.BannerMessage"
+}

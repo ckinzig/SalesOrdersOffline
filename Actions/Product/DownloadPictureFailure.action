@@ -1,0 +1,6 @@
+{
+	"Animated": true,
+	"Duration": 3,
+	"Message": "$(L,'productDownloadPicutreFailure', {{#ActionResult:MediaResult/#Property:error}})",
+	"_Type": "Action.Type.BannerMessage"
+}

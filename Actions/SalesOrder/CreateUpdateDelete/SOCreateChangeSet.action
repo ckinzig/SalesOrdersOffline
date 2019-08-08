@@ -1,0 +1,12 @@
+{
+	"Actions": [
+		"/SalesOrdersOffline/Actions/SalesOrder/NavToSOHeaderCreate.action",
+		"/SalesOrdersOffline/Actions/SalesOrder/NavToSOItemCreateUpdate.action"
+	],
+	"OnFailure": "/SalesOrdersOffline/Rules/Common/ChangeSet/ChangeSetOnFailure.js",
+	"OnSuccess": "/SalesOrdersOffline/Rules/Common/ChangeSet/ChangeSetOnSuccess.js",
+	"Target": {
+		"Service": "/SalesOrdersOffline/Services/SampleSrv.service"
+	},
+	"_Type": "Action.Type.ODataService.ChangeSet"
+}
